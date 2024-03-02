@@ -1,14 +1,31 @@
-import './estilo.css'
+import styled from 'styled-components';
+
+const Option = styled.li`
+    min-width: 120px;
+    font-size: 16px;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+
+`
+const Options = styled.ul`
+    display: flex;
+`
+
 
 const textOptions = ['CATEGORIAS','FAVORITOS','MINHA ESTANTE'];
 
 function OptionsHeader (){
     return(
-        <ul className='options'>
+        <Options>
             {textOptions.map( (text) => (
-                <li className='option'><p>{text}</p></li>
+                <Option><p>{text}</p></Option>
         ) ) }
-      </ul>
+      </Options>
     )
 }
 
