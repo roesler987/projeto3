@@ -56,7 +56,7 @@ function Pesquisa() {
                 placeholder="Escreva sua próxima leitura"
                 onBlur={evento => {
                     const textoDigitado = evento.target.value.toLowerCase();
-                    const resultadoPesquisa = livros.filter(livro => livro.nome.toLowerCase().includes(textoDigitado));
+                    const resultadoPesquisa = livros.filter(livro => livro.nome.toLowerCase().includes(textoDigitado)); 
                     setLivrosPesquisados(resultadoPesquisa);
                 }}
                 onKeyDown={e => {
