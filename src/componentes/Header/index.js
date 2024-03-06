@@ -1,5 +1,5 @@
 import Logo from '../Logo'
-import OptionsHeader from '../optionsHeader'
+import OptionsHeader from '../OptionsHeader'
 import IconsHeader from '../iconsHeader'
 import styled from 'styled-components'
 
