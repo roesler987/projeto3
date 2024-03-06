@@ -46,7 +46,7 @@ const Resultado = styled.div`
 `
 
 function Pesquisa() {
-    const [livrosPesquisados, setLivrosPesquisados] = useState([])
+    const [livrosPesquisados, setLivrosPesquisados] = useState([]);
 
     return (
         <PesquisaContainer>
@@ -55,19 +55,28 @@ function Pesquisa() {
             <Input
                 placeholder="Escreva sua próxima leitura"
                 onBlur={evento => {
-                    const textoDigitado = evento.target.value
-                    const resultadoPesquisa = livros.filter( livro => livro.nome.includes(textoDigitado))
-                    setLivrosPesquisados(resultadoPesquisa)
+                    const textoDigitado = evento.target.value;
+                    const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado));
+                    console.log(resultadoPesquisa);
+                    setLivrosPesquisados(resultadoPesquisa);
+                }}
+                onKeyDown={e => {
+                    if (e.key === 'Enter') {
+                        const textoDigitado = e.target.value;
+                        const resultadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado));
+                        console.log(resultadoPesquisa);
+                        setLivrosPesquisados(resultadoPesquisa);
+                    }
                 }}
             />
-            { livrosPesquisados.map( livro => (
-                <Resultado>
-                    <img src={livro.src}/>
+            {livrosPesquisados.map(livro => (
+                <Resultado key={livro.id}>
+                    <img src={livro.src} alt={livro.nome} />
                     <p>{livro.nome}</p>
                 </Resultado>
-            ) ) }
+            ))}
         </PesquisaContainer>
-    )
+    );
 }
 
-export default Pesquisa
+export default Pesquisa;
