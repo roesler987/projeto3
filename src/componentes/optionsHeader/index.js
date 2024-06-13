@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Option = styled.li`
@@ -17,13 +18,13 @@ const Options = styled.ul`
 `
 
 
-const textOptions = ['CATEGORIAS','FAVORITOS','MINHA ESTANTE'];
+const textOptions = ['CATEGORIAS','FAVORITOS','ESTANTE'];
 
 function OptionsHeader (){
     return(
         <Options>
             {textOptions.map( (text) => (
-                <Option><p>{text}</p></Option>
+                <Link to={`/${text.toLocaleLowerCase()}`} ><Option><p>{text}</p></Option></Link>
         ) ) }
       </Options>
     )

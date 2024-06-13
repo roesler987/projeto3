@@ -1,7 +1,7 @@
-import Header from './componentes/Header/index.js';
+import Header from '../componentes/Header/index.js';
 import styled from 'styled-components';
-import Search from './componentes/Search';
-import UltimosLancamentos from './componentes/UltimosLancamentos/index.js';
+import Search from '../componentes/Search/index.js';
+import UltimosLancamentos from '../componentes/UltimosLancamentos/index.js';
 
 const AppContainer = styled.div`
     width: 100vw;
@@ -10,14 +10,12 @@ const AppContainer = styled.div`
     
 `
 
-function App() {
+function Favoritos() {
   return (
     <AppContainer>
-      <Header/>
       <Search/>
-      <UltimosLancamentos/>
     </AppContainer>
   );
 }
 
-export default App;
+export default Favoritos;
